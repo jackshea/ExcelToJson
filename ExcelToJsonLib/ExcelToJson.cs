@@ -1,8 +1,10 @@
 ﻿using System;
+using System.Data;
 
 namespace ExcelToJsonLib
 {
-    public class Class1
+    public class ExcelToJson
     {
+
     }
 }
