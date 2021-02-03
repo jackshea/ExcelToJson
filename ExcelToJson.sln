@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30907.101
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExcelToJsonConsole", "ExcelToJsonConsole.csproj", "{B27DF990-CAD2-4D6E-B983-879461296069}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExcelToJsonLib", "ExcelToJsonLib\ExcelToJsonLib.csproj", "{C217E9C7-77A8-4D42-8B57-9DC73F0C8A59}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExcelToJsonLib", "..\ExcelToJsonLib\ExcelToJsonLib.csproj", "{EE892B3B-7C9D-430D-8F93-45ED352CD962}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExcelToJsonConsole", "ExcelToJsonConsole\ExcelToJsonConsole.csproj", "{22972236-5D3B-4B95-B756-B3157DBB8EEF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -13,14 +13,14 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{B27DF990-CAD2-4D6E-B983-879461296069}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{B27DF990-CAD2-4D6E-B983-879461296069}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{B27DF990-CAD2-4D6E-B983-879461296069}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{B27DF990-CAD2-4D6E-B983-879461296069}.Release|Any CPU.Build.0 = Release|Any CPU
-		{EE892B3B-7C9D-430D-8F93-45ED352CD962}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{EE892B3B-7C9D-430D-8F93-45ED352CD962}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{EE892B3B-7C9D-430D-8F93-45ED352CD962}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{EE892B3B-7C9D-430D-8F93-45ED352CD962}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C217E9C7-77A8-4D42-8B57-9DC73F0C8A59}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C217E9C7-77A8-4D42-8B57-9DC73F0C8A59}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C217E9C7-77A8-4D42-8B57-9DC73F0C8A59}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C217E9C7-77A8-4D42-8B57-9DC73F0C8A59}.Release|Any CPU.Build.0 = Release|Any CPU
+		{22972236-5D3B-4B95-B756-B3157DBB8EEF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{22972236-5D3B-4B95-B756-B3157DBB8EEF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{22972236-5D3B-4B95-B756-B3157DBB8EEF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{22972236-5D3B-4B95-B756-B3157DBB8EEF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
