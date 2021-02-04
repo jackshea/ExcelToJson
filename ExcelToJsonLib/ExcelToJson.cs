@@ -1,5 +1,5 @@
-﻿using System;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Data;
 
@@ -38,7 +38,17 @@ namespace ExcelToJsonLib
         public string OpenExcelAndToJson(string filePath)
         {
             var excelLoader = new ExcelLoader(filePath, 1);
-            return DataTableToJson(excelLoader.Sheets[0]);
+            string json;
+            try
+            {
+                json = DataTableToJson(excelLoader.Sheets[0]);
+            }
+            catch (Exception e)
+            {
+                throw new Exception($"Failed to export data. FilePath:{filePath}", e);
+            }
+
+            return json;
         }
 
         public string DataTableToJson(DataTable dt)
@@ -63,30 +73,37 @@ namespace ExcelToJsonLib
                 for (var j = 0; j < dt.Columns.Count; j++)
                 {
                     DataColumn dc = dt.Columns[j];
-                    var cell = dr[dc];
-                    if (types[j] == typeof(string))
+                    try
                     {
-                        rowData[dc.ColumnName] = cell;
+                        var cell = dr[dc].ToString();
+                        if (types[j] == typeof(string))
+                        {
+                            rowData[dc.ColumnName] = cell;
+                        }
+                        else if (types[j] == typeof(int))
+                        {
+                            rowData[dc.ColumnName] = int.Parse(cell == "" ? "0" : cell);
+                        }
+                        else if (types[j] == typeof(float))
+                        {
+                            rowData[dc.ColumnName] = float.Parse(cell == "" ? "0" : cell);
+                        }
+                        else if (types[j] == typeof(double))
+                        {
+                            rowData[dc.ColumnName] = double.Parse(cell == "" ? "0" : cell);
+                        }
+                        else if (types[j] == typeof(bool))
+                        {
+                            rowData[dc.ColumnName] = bool.Parse(cell);
+                        }
+                        else
+                        {
+                            rowData[dc.ColumnName] = JsonConvert.DeserializeObject(cell, types[j]);
+                        }
                     }
-                    else if (types[j] == typeof(int))
+                    catch (Exception e)
                     {
-                        rowData[dc.ColumnName] = int.Parse(cell.ToString());
-                    }
-                    else if (types[j] == typeof(float))
-                    {
-                        rowData[dc.ColumnName] = float.Parse(cell.ToString());
-                    }
-                    else if (types[j] == typeof(double))
-                    {
-                        rowData[dc.ColumnName] = double.Parse(cell.ToString());
-                    }
-                    else if (types[j] == typeof(bool))
-                    {
-                        rowData[dc.ColumnName] = bool.Parse(cell.ToString());
-                    }
-                    else
-                    {
-                        rowData[dc.ColumnName] = JsonConvert.DeserializeObject(cell.ToString(), types[j]);
+                        throw new Exception($"The data format is incorrect. row:{i},colName:{dc.ColumnName}", e);
                     }
                 }
 
