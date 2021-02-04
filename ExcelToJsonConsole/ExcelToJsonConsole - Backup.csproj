@@ -6,11 +6,13 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="System.Text.Encoding.CodePages" Version="5.0.0" />
+    <ProjectReference Include="..\ExcelToJsonLib\ExcelToJsonLib.csproj" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\ExcelToJsonLib\ExcelToJsonLib.csproj" />
+    <EmbeddedResource Update="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+    </EmbeddedResource>
   </ItemGroup>
 
 </Project>
