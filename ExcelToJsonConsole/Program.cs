@@ -1,7 +1,6 @@
-﻿using System;
+﻿using ExcelToJsonLib;
+using System;
 using System.Text;
-using ExcelToJsonLib;
-using Newtonsoft.Json;
 
 namespace ExcelToJsonConsole
 {

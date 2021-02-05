@@ -27,7 +27,7 @@ namespace ExcelToJsonLib
             TypeMapper.Add("double", typeof(double));
             TypeMapper.Add("string", typeof(string));
             TypeMapper.Add("object", typeof(object));
-            //TypeMapper.Add("bool", typeof(bool));
+            TypeMapper.Add("bool", typeof(bool));
             TypeMapper.Add("int[]", typeof(int[]));
             TypeMapper.Add("float[]", typeof(float[]));
             TypeMapper.Add("string[]", typeof(string[]));
